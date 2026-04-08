@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ご予約 | LUMIÈRE</title>
+  <meta name="description" content="LUMIÈREのご予約はこちらから。AI診断結果をお持ちの方はご予約時にお知らせください。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ══════════════════════════════════
+     NAVIGATION
+══════════════════════════════════ -->
+<nav id="nav">
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-logo">LUM<span>I</span>ÈRE</a>
+    <ul class="nav-links">
+      <li><a href="index.html">ホーム</a></li>
+      <li><a href="menu.html">メニュー</a></li>
+      <li><a href="diagnosis.html">AI診断</a></li>
+      <li><a href="stylists.html">スタイリスト</a></li>
+      <li><a href="gallery.html">ギャラリー</a></li>
+    </ul>
+    <a href="reservation.html" class="btn btn-primary nav-cta"><span>ご予約</span></a>
+    <button class="nav-hamburger" id="hamburger" aria-label="メニューを開く">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div id="mobileMenu" class="nav-mobile">
+  <a href="index.html">ホーム</a>
+  <a href="menu.html">メニュー</a>
+  <a href="diagnosis.html">AI診断</a>
+  <a href="stylists.html">スタイリスト</a>
+  <a href="gallery.html">ギャラリー</a>
+  <a href="reservation.html">ご予約</a>
+</div>
+
+
+<!-- ══════════════════════════════════
+     PAGE HERO
+══════════════════════════════════ -->
+<section class="page-hero">
+  <div class="container">
+    <span class="section-label">Reservation</span>
+    <span class="gold-line"></span>
+    <h1 class="page-hero-title">ご予約</h1>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════
+     RESERVATION
+══════════════════════════════════ -->
+<section id="reservation" class="section">
+  <div class="container">
+    <div class="reservation-grid">
+      <div class="reservation-info" data-reveal="left">
+        <span class="section-label">Reservation</span>
+        <span class="gold-line"></span>
+        <h2 class="section-title">ご予約</h2>
+        <p class="section-subtitle">
+          ご予約後、担当スタイリストより確認のご連絡をお送りします。
+          AI診断結果をお持ちの方は、ぜひご予約時にお知らせください。
+        </p>
+        <div class="reservation-points">
+          <div class="reservation-point">
+            <span class="reservation-point-num">01</span>
+            <div class="reservation-point-body">
+              <h4>カウンセリング込み</h4>
+              <p>すべての施術に無料カウンセリングが含まれます。当日のご要望もお気軽にどうぞ。</p>
+            </div>
+          </div>
+          <div class="reservation-point">
+            <span class="reservation-point-num">02</span>
+            <div class="reservation-point-body">
+              <h4>当日キャンセル無料</h4>
+              <p>前日21時までのキャンセルは無料。ご都合が変わった際もお気軽にご連絡ください。</p>
+            </div>
+          </div>
+          <div class="reservation-point">
+            <span class="reservation-point-num">03</span>
+            <div class="reservation-point-body">
+              <h4>完全個室でくつろぎを</h4>
+              <p>半個室のプライベート空間でゆったりとした時間をお過ごしいただけます。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div data-reveal="right">
+        <form class="reservation-form" id="reservationForm" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">お名前 <span style="color:var(--gold)">*</span></label>
+              <input type="text" id="name" name="name" placeholder="山田 花子" required>
+            </div>
+            <div class="form-group">
+              <label for="kana">フリガナ</label>
+              <input type="text" id="kana" name="kana" placeholder="ヤマダ ハナコ">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="tel">電話番号 <span style="color:var(--gold)">*</span></label>
+              <input type="tel" id="tel" name="tel" placeholder="090-1234-5678" required>
+            </div>
+            <div class="form-group">
+              <label for="email">メールアドレス <span style="color:var(--gold)">*</span></label>
+              <input type="email" id="email" name="email" placeholder="example@email.com" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="date">ご希望日</label>
+              <input type="date" id="date" name="date">
+            </div>
+            <div class="form-group">
+              <label for="time">ご希望時間帯</label>
+              <select id="time" name="time">
+                <option value="">お選びください</option>
+                <option>10:00〜12:00</option>
+                <option>12:00〜14:00</option>
+                <option>14:00〜16:00</option>
+                <option>16:00〜18:00</option>
+                <option>18:00〜20:00</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="menu">ご希望メニュー</label>
+            <select id="menu" name="menu">
+              <option value="">お選びください</option>
+              <option>カット</option>
+              <option>カット + カラー</option>
+              <option>カット + パーマ</option>
+              <option>カット + トリートメント</option>
+              <option>AIトータルプラン</option>
+              <option>カラーのみ</option>
+              <option>ヘッドスパ</option>
+              <option>その他・ご相談</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="stylist">担当スタイリスト</label>
+            <select id="stylist" name="stylist">
+              <option value="">指名なし（おまかせ）</option>
+              <option>桐島 あかり</option>
+              <option>黒川 拓海</option>
+              <option>松本 ゆい</option>
+              <option>伊藤 蓮</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">ご要望・ご質問</label>
+            <textarea id="message" name="message" placeholder="AI診断結果・アレルギー情報・髪のお悩みなど、何でもお気軽にどうぞ"></textarea>
+          </div>
+          <div class="form-submit">
+            <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center; padding:1.1rem"><span>予約リクエストを送る</span></button>
+          </div>
+        </form>
+
+        <div class="form-thankyou" id="formThankyou">
+          <span class="form-thankyou-icon">✦</span>
+          <h3>ありがとうございます</h3>
+          <p>ご予約リクエストを受け付けました。担当スタイリストより24時間以内にご連絡いたします。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+
+<!-- ══════════════════════════════════
+     FAQ
+══════════════════════════════════ -->
+<section id="faq" class="section section--alt">
+  <div class="container">
+    <div data-reveal="up" style="margin-bottom:1rem">
+      <span class="section-label">FAQ</span>
+      <span class="gold-line"></span>
+      <h2 class="section-title">よくある質問</h2>
+    </div>
+
+    <div class="faq-list" data-stagger>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span>初めての来店でも大丈夫ですか？</span>
+          <span class="faq-icon">＋</span>
+        </button>
+        <div class="faq-answer">
+          <p>はい、もちろんです。初めてご来店のお客様には、必ず無料カウンセリングを実施しております。AI診断も無料でご利用いただけますので、ぜひお気軽にご来店ください。担当スタイリストが丁寧にヒアリングいたします。</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span>AI診断はどのくらいの精度ですか？</span>
+          <span class="faq-icon">＋</span>
+        </button>
+        <div class="faq-answer">
+          <p>顔型・髪質・ライフスタイルを総合的に分析し、2,400件以上の診断実績に基づいた提案を行います。ただし、最終的なスタイル決定は熟練スタイリストが直接お客様と対話しながら決定しますので、AI診断はあくまで「出発点」としてご活用ください。</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span>当日予約は可能ですか？</span>
+          <span class="faq-icon">＋</span>
+        </button>
+        <div class="faq-answer">
+          <p>空き状況によっては当日予約もお受けしております。お電話（03-1234-5678）にてお問い合わせいただくか、予約フォームよりご連絡ください。なお、担当スタイリストのご指名がある場合は、お早めのご予約をおすすめします。</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span>アレルギーがあっても施術できますか？</span>
+          <span class="faq-icon">＋</span>
+        </button>
+        <div class="faq-answer">
+          <p>ご来店前にお知らせいただければ、アレルギー対応の薬剤をご用意します。パッチテストも承っておりますので（要事前予約）、不安な方はお気軽にご相談ください。お客様の安全を最優先に対応いたします。</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span>子ども連れでも来店できますか？</span>
+          <span class="faq-icon">＋</span>
+        </button>
+        <div class="faq-answer">
+          <p>半個室の空間をご用意しておりますので、小さなお子様連れでも安心してご利用いただけます。お子様用のチェアもご用意しております。ただし混雑時はご迷惑をおかけする場合がございますので、事前にご相談いただくとスムーズです。</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+
+<!-- ══════════════════════════════════
+     ACCESS
+══════════════════════════════════ -->
+<section id="access" class="section">
+  <div class="container">
+    <div data-reveal="up">
+      <span class="section-label">Access</span>
+      <span class="gold-line"></span>
+      <h2 class="section-title">アクセス</h2>
+    </div>
+
+    <div class="access-grid">
+      <div class="access-info-block" data-stagger>
+        <div class="access-item">
+          <h4>住所</h4>
+          <p>〒107-0061<br>東京都港区北青山3-5-10<br>LUMIÈREビル 3F</p>
+        </div>
+        <div class="access-item">
+          <h4>電車でのアクセス</h4>
+          <p>東京メトロ銀座線・千代田線・半蔵門線<br>「表参道駅」A3出口より徒歩3分</p>
+        </div>
+        <div class="access-item">
+          <h4>営業時間</h4>
+          <p>平日 / 10:00 — 20:00<br>土日祝 / 9:00 — 20:00<br>定休日：毎週火曜日</p>
+        </div>
+        <div class="access-item">
+          <h4>お問い合わせ</h4>
+          <p>Tel. 03-1234-5678<br>info@lumiere-salon.jp</p>
+        </div>
+      </div>
+
+      <div class="access-map" data-reveal="right">
+        <div class="map-pin">
+          <div class="map-pin-dot"></div>
+          <span class="map-pin-label">LUMIÈRE 表参道</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════
+     FOOTER
+══════════════════════════════════ -->
+<footer id="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo">LUM<span>I</span>ÈRE</a>
+        <p>AIと人の感性が出会う、表参道の隠れ家的ヘアサロン。あなただけの美しさを、ともに見つけましょう。</p>
+      </div>
+      <div class="footer-col">
+        <h5>Menu</h5>
+        <ul>
+          <li><a href="menu.html">カット</a></li>
+          <li><a href="menu.html">カラー</a></li>
+          <li><a href="menu.html">パーマ</a></li>
+          <li><a href="menu.html">トリートメント</a></li>
+          <li><a href="menu.html">ヘッドスパ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Salon</h5>
+        <ul>
+          <li><a href="index.html#concept">コンセプト</a></li>
+          <li><a href="stylists.html">スタイリスト</a></li>
+          <li><a href="gallery.html">ギャラリー</a></li>
+          <li><a href="diagnosis.html">AI診断</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Info</h5>
+        <ul>
+          <li><a href="reservation.html">ご予約</a></li>
+          <li><a href="reservation.html#access">アクセス</a></li>
+          <li><a href="reservation.html#faq">よくある質問</a></li>
+          <li><a href="#">プライバシーポリシー</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">&copy; 2026 LUMIÈRE Hair Salon. All rights reserved.</span>
+      <div class="footer-social">
+        <a href="#">Instagram</a>
+        <a href="#">Twitter</a>
+        <a href="#">LINE</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
