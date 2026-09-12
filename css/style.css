@@ -1934,3 +1934,127 @@
 @media (max-width: 480px) {
   .home-nav-grid { grid-template-columns: 1fr; }
 }
+
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   MEDIA — 写真スロット
+   images/ 内のファイルを差し替えるだけで反映されます。
+   画像が無い場合は元のグラデーションにフォールバックします。
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+.media {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Hero background */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.hero-bg .media {
+  opacity: 0.42;
+  filter: saturate(0.85) contrast(1.05);
+}
+
+.hero-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(100deg,
+    rgba(8,8,8,0.97) 0%,
+    rgba(8,8,8,0.90) 38%,
+    rgba(8,8,8,0.60) 100%);
+  pointer-events: none;
+}
+
+.hero-visual { z-index: 2; }
+.hero-scroll { z-index: 2; }
+
+/* Concept cards */
+.concept-card .media {
+  position: absolute;
+  inset: 0;
+  opacity: 0.85;
+}
+
+/* ラベル（elegance / precision）は元の絶対配置のまま前面へ。
+   写真の上でも読めるよう、下端に暗いスクリムをかける。 */
+.concept-card .concept-card-text {
+  z-index: 2;
+}
+
+.concept-card:has(.media) {
+  box-shadow: inset 0 -70px 55px -25px rgba(8,8,8,0.9);
+}
+
+/* Stylist cards — 写真が入ったら装飾を隠す */
+.stylist-photo:has(.media) .stylist-monogram,
+.stylist-photo:has(.media) .stylist-silhouette {
+  opacity: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gallery-item:hover .gallery-bg,
+  .stylist-card:hover .stylist-photo-bg { transform: none; }
+}
+
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   FORM — バリデーション表示
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+.field-error {
+  display: block;
+  margin-top: 0.45rem;
+  font-size: 0.74rem;
+  letter-spacing: 0.02em;
+  color: #e0706e;
+}
+
+.form-group input[aria-invalid="true"],
+.form-group select[aria-invalid="true"],
+.form-group textarea[aria-invalid="true"] {
+  border-color: #e0706e;
+  box-shadow: 0 0 0 1px rgba(224,112,110,0.18);
+}
+
+.form-error {
+  margin: 1.2rem 0 0;
+  padding: 0.9rem 1.1rem;
+  border: 1px solid rgba(224,112,110,0.4);
+  background: rgba(224,112,110,0.08);
+  color: #eaa3a1;
+  font-size: 0.85rem;
+  border-radius: 2px;
+}
+
+.btn[disabled] {
+  opacity: 0.55;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+
+/* ━━━ スタイリストカード（写真を使わない場合の意匠を統一） ━━━
+   ・1枚目だけ背景グラデーションが当たっていなかったのを修正
+   ・モノグラムが背景の下に隠れていたのを前面へ
+   ※ images/stylist-*.jpg を置けば、この意匠は自動で非表示になります */
+
+.stylist-card:nth-child(1) .stylist-photo-bg {
+  background: linear-gradient(160deg, #1a1000 0%, #2d1e05 40%, #1a1200 70%, #0d0905 100%);
+}
+
+.stylist-monogram {
+  z-index: 2;
+  opacity: 0.3;
+}
+
+.stylist-card:hover .stylist-monogram {
+  opacity: 0.45;
+}

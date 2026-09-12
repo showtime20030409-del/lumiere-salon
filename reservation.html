@@ -95,35 +95,38 @@
       </div>
 
       <div data-reveal="right">
-        <form class="reservation-form" id="reservationForm" novalidate>
+        <form class="reservation-form" id="reservationForm" method="POST"
+              action="https://docs.google.com/forms/d/e/1FAIpQLSc37O-S0_S-CRsl9Nc5HpU2qB26IJYZa-EWFkM_h8fxPiUaDg/formResponse"
+              data-endpoint="https://docs.google.com/forms/d/e/1FAIpQLSc37O-S0_S-CRsl9Nc5HpU2qB26IJYZa-EWFkM_h8fxPiUaDg/formResponse" novalidate>
+          <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" hidden aria-hidden="true">
           <div class="form-row">
             <div class="form-group">
               <label for="name">お名前 <span style="color:var(--gold)">*</span></label>
-              <input type="text" id="name" name="name" placeholder="山田 花子" required>
+              <input type="text" id="name" name="entry.992525100" placeholder="山田 花子" autocomplete="name" required>
             </div>
             <div class="form-group">
               <label for="kana">フリガナ</label>
-              <input type="text" id="kana" name="kana" placeholder="ヤマダ ハナコ">
+              <input type="text" id="kana" name="entry.2140082056" placeholder="ヤマダ ハナコ">
             </div>
           </div>
           <div class="form-row">
             <div class="form-group">
               <label for="tel">電話番号 <span style="color:var(--gold)">*</span></label>
-              <input type="tel" id="tel" name="tel" placeholder="090-1234-5678" required>
+              <input type="tel" id="tel" name="entry.1988269705" placeholder="090-1234-5678" autocomplete="tel" inputmode="tel" required>
             </div>
             <div class="form-group">
               <label for="email">メールアドレス <span style="color:var(--gold)">*</span></label>
-              <input type="email" id="email" name="email" placeholder="example@email.com" required>
+              <input type="email" id="email" name="entry.1867630428" placeholder="example@email.com" autocomplete="email" inputmode="email" required>
             </div>
           </div>
           <div class="form-row">
             <div class="form-group">
               <label for="date">ご希望日</label>
-              <input type="date" id="date" name="date">
+              <input type="date" id="date" name="entry.158048633">
             </div>
             <div class="form-group">
               <label for="time">ご希望時間帯</label>
-              <select id="time" name="time">
+              <select id="time" name="entry.743433309">
                 <option value="">お選びください</option>
                 <option>10:00〜12:00</option>
                 <option>12:00〜14:00</option>
@@ -135,7 +138,7 @@
           </div>
           <div class="form-group">
             <label for="menu">ご希望メニュー</label>
-            <select id="menu" name="menu">
+            <select id="menu" name="entry.185441051">
               <option value="">お選びください</option>
               <option>カット</option>
               <option>カット + カラー</option>
@@ -149,7 +152,7 @@
           </div>
           <div class="form-group">
             <label for="stylist">担当スタイリスト</label>
-            <select id="stylist" name="stylist">
+            <select id="stylist" name="entry.407230557">
               <option value="">指名なし（おまかせ）</option>
               <option>桐島 あかり</option>
               <option>黒川 拓海</option>
@@ -159,8 +162,9 @@
           </div>
           <div class="form-group">
             <label for="message">ご要望・ご質問</label>
-            <textarea id="message" name="message" placeholder="AI診断結果・アレルギー情報・髪のお悩みなど、何でもお気軽にどうぞ"></textarea>
+            <textarea id="message" name="entry.110628484" placeholder="AI診断結果・アレルギー情報・髪のお悩みなど、何でもお気軽にどうぞ"></textarea>
           </div>
+          <p class="form-error" id="formError" role="alert" hidden></p>
           <div class="form-submit">
             <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center; padding:1.1rem"><span>予約リクエストを送る</span></button>
           </div>
