@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI ヘアスタイル診断 | LUMIÈRE</title>
+  <meta name="description" content="3つの質問に答えるだけで、あなたに最もふさわしいヘアスタイルをAIがご提案。表参道のヘアサロン LUMIÈRE。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ══════════════════════════════════
+     NAVIGATION
+══════════════════════════════════ -->
+<nav id="nav">
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-logo">LUM<span>I</span>ÈRE</a>
+    <ul class="nav-links">
+      <li><a href="index.html">ホーム</a></li>
+      <li><a href="menu.html">メニュー</a></li>
+      <li><a href="diagnosis.html">AI診断</a></li>
+      <li><a href="stylists.html">スタイリスト</a></li>
+      <li><a href="gallery.html">ギャラリー</a></li>
+    </ul>
+    <a href="reservation.html" class="btn btn-primary nav-cta"><span>ご予約</span></a>
+    <button class="nav-hamburger" id="hamburger" aria-label="メニューを開く">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div id="mobileMenu" class="nav-mobile">
+  <a href="index.html">ホーム</a>
+  <a href="menu.html">メニュー</a>
+  <a href="diagnosis.html">AI診断</a>
+  <a href="stylists.html">スタイリスト</a>
+  <a href="gallery.html">ギャラリー</a>
+  <a href="reservation.html">ご予約</a>
+</div>
+
+
+<!-- ══════════════════════════════════
+     PAGE HERO
+══════════════════════════════════ -->
+<section class="page-hero">
+  <div class="container">
+    <span class="section-label">AI Hair Diagnosis</span>
+    <span class="gold-line"></span>
+    <h1 class="page-hero-title">AIヘアスタイル診断</h1>
+    <p class="section-subtitle">3つの質問に答えるだけで、あなたに最もふさわしいヘアスタイルをAIがご提案します。</p>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════
+     AI DIAGNOSIS
+══════════════════════════════════ -->
+<section id="ai-diagnosis" class="section">
+  <div class="container">
+
+    <div class="quiz-wrapper">
+      <!-- Start screen -->
+      <div class="quiz-start" id="quizStart">
+        <span class="quiz-start-icon">◈</span>
+        <h3>あなたに合うスタイルを<br>見つけましょう</h3>
+        <p>顔型・髪のお悩み・好みのスタイルをお聞きします。所要時間は約1分です。</p>
+        <button class="btn btn-primary" id="quizStartBtn"><span>診断をはじめる</span></button>
+      </div>
+
+      <!-- Progress -->
+      <div class="quiz-progress" id="quizProgress" style="display:none">
+        <div class="quiz-progress-bar-bg">
+          <div class="quiz-progress-bar" id="quizProgressBar"></div>
+        </div>
+        <span class="quiz-progress-text" id="quizProgressText">STEP 1 / 3</span>
+      </div>
+
+      <!-- Step 1: Face shape -->
+      <div class="quiz-step" id="quizStep1">
+        <span class="quiz-step-label">Step 01 — 顔の形</span>
+        <h3>あなたの顔型を<br>選んでください</h3>
+        <div class="quiz-options" data-stagger>
+          <button class="quiz-option" data-step="1" data-value="oval">
+            <span class="quiz-option-icon">◉</span>
+            <h4>卵型</h4>
+            <p>おでこが少し広く、あごに向かってなだらかに細くなる理想的な輪郭</p>
+          </button>
+          <button class="quiz-option" data-step="1" data-value="round">
+            <span class="quiz-option-icon">◯</span>
+            <h4>丸型</h4>
+            <p>顔の横幅と縦幅がほぼ同じで、頬の丸みが特徴的な輪郭</p>
+          </button>
+          <button class="quiz-option" data-step="1" data-value="long">
+            <span class="quiz-option-icon">◻</span>
+            <h4>面長</h4>
+            <p>縦のラインが長く、額から顎にかけてすっきりとした輪郭</p>
+          </button>
+          <button class="quiz-option" data-step="1" data-value="square">
+            <span class="quiz-option-icon">▣</span>
+            <h4>四角型</h4>
+            <p>顎のラインがはっきりとしたシャープで力強い輪郭</p>
+          </button>
+        </div>
+        <div class="quiz-nav">
+          <button class="quiz-btn-back hidden" data-to="0">← 戻る</button>
+          <button class="btn btn-primary quiz-btn-next" data-from="1"><span>次へ進む</span></button>
+        </div>
+      </div>
+
+      <!-- Step 2: Concern -->
+      <div class="quiz-step" id="quizStep2">
+        <span class="quiz-step-label">Step 02 — 髪のお悩み</span>
+        <h3>髪のお悩みを<br>選んでください</h3>
+        <div class="quiz-options" data-stagger>
+          <button class="quiz-option" data-step="2" data-value="volume">
+            <span class="quiz-option-icon">↑</span>
+            <h4>ボリュームが出ない</h4>
+            <p>根元がぺたっとして、ふんわり感がなかなか出ない</p>
+          </button>
+          <button class="quiz-option" data-step="2" data-value="curly">
+            <span class="quiz-option-icon">∿</span>
+            <h4>くせ毛・うねり</h4>
+            <p>湿気でくせが出たり、まとまりにくいと感じる</p>
+          </button>
+          <button class="quiz-option" data-step="2" data-value="damage">
+            <span class="quiz-option-icon">◈</span>
+            <h4>ダメージが気になる</h4>
+            <p>カラーやパーマで傷んでいる、パサつきが気になる</p>
+          </button>
+          <button class="quiz-option" data-step="2" data-value="thin">
+            <span class="quiz-option-icon">·</span>
+            <h4>髪が細い・少ない</h4>
+            <p>ハリやコシが感じられず、スタイルがすぐに崩れてしまう</p>
+          </button>
+        </div>
+        <div class="quiz-nav">
+          <button class="quiz-btn-back" data-to="1">← 戻る</button>
+          <button class="btn btn-primary quiz-btn-next" data-from="2"><span>次へ進む</span></button>
+        </div>
+      </div>
+
+      <!-- Step 3: Style -->
+      <div class="quiz-step" id="quizStep3">
+        <span class="quiz-step-label">Step 03 — 好みのスタイル</span>
+        <h3>理想のイメージを<br>選んでください</h3>
+        <div class="quiz-options" data-stagger>
+          <button class="quiz-option" data-step="3" data-value="natural">
+            <span class="quiz-option-icon">☽</span>
+            <h4>ナチュラル</h4>
+            <p>肩の力が抜けた、自然体でいられるリラックスしたスタイル</p>
+          </button>
+          <button class="quiz-option" data-step="3" data-value="cool">
+            <span class="quiz-option-icon">◆</span>
+            <h4>クール</h4>
+            <p>都会的でシャープ、凛とした知性を感じさせるスタイル</p>
+          </button>
+          <button class="quiz-option" data-step="3" data-value="feminine">
+            <span class="quiz-option-icon">✿</span>
+            <h4>フェミニン</h4>
+            <p>柔らかく可愛らしい、女性らしさが際立つ上品なスタイル</p>
+          </button>
+          <button class="quiz-option" data-step="3" data-value="trendy">
+            <span class="quiz-option-icon">★</span>
+            <h4>トレンド重視</h4>
+            <p>今シーズンの最旬スタイルで、旬な印象を取り入れたい</p>
+          </button>
+        </div>
+        <div class="quiz-nav">
+          <button class="quiz-btn-back" data-to="2">← 戻る</button>
+          <button class="btn btn-primary quiz-btn-next" data-from="3"><span>診断結果を見る</span></button>
+        </div>
+      </div>
+
+      <!-- Result -->
+      <div class="quiz-result" id="quizResult">
+        <div class="result-card">
+          <div class="result-card-top">
+            <div class="result-gradient" id="resultGradient"></div>
+            <div class="result-card-top-content">
+              <span class="result-tag">AI おすすめスタイル</span>
+              <h2 class="result-style-name" id="resultStyleName"></h2>
+            </div>
+          </div>
+          <div class="result-card-body">
+            <p class="result-desc" id="resultDesc"></p>
+            <div class="result-features" id="resultFeatures"></div>
+            <div class="result-menu">
+              <span class="result-menu-label">おすすめメニュー</span>
+              <span class="result-menu-text" id="resultMenu"></span>
+            </div>
+            <div class="result-actions">
+              <a href="reservation.html" class="btn btn-primary"><span>このスタイルで予約する</span></a>
+              <button class="quiz-restart" id="quizRestart">もう一度診断する</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /quiz-wrapper -->
+  </div>
+</section>
+
+<hr class="divider">
+
+
+<!-- ══════════════════════════════════
+     CTA BANNER
+══════════════════════════════════ -->
+<section class="cta-banner">
+  <div class="container cta-banner-inner">
+    <p class="cta-banner-text">診断結果をもとに、スタイリストがご提案いたします</p>
+    <a href="reservation.html" class="btn btn-primary"><span>ご予約はこちら</span></a>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════
+     FOOTER
+══════════════════════════════════ -->
+<footer id="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo">LUM<span>I</span>ÈRE</a>
+        <p>AIと人の感性が出会う、表参道の隠れ家的ヘアサロン。あなただけの美しさを、ともに見つけましょう。</p>
+      </div>
+      <div class="footer-col">
+        <h5>Menu</h5>
+        <ul>
+          <li><a href="menu.html">カット</a></li>
+          <li><a href="menu.html">カラー</a></li>
+          <li><a href="menu.html">パーマ</a></li>
+          <li><a href="menu.html">トリートメント</a></li>
+          <li><a href="menu.html">ヘッドスパ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Salon</h5>
+        <ul>
+          <li><a href="index.html#concept">コンセプト</a></li>
+          <li><a href="stylists.html">スタイリスト</a></li>
+          <li><a href="gallery.html">ギャラリー</a></li>
+          <li><a href="diagnosis.html">AI診断</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Info</h5>
+        <ul>
+          <li><a href="reservation.html">ご予約</a></li>
+          <li><a href="reservation.html#access">アクセス</a></li>
+          <li><a href="reservation.html#faq">よくある質問</a></li>
+          <li><a href="#">プライバシーポリシー</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">&copy; 2026 LUMIÈRE Hair Salon. All rights reserved.</span>
+      <div class="footer-social">
+        <a href="#">Instagram</a>
+        <a href="#">Twitter</a>
+        <a href="#">LINE</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/quiz.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
